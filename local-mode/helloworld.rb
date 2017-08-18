@@ -1,5 +1,3 @@
-directory '/tmp/messages'
-
-file '/tmp/messages/motd' do
+file '/d/Code/chef/hello.txt' do
   content 'hello world'
 end
