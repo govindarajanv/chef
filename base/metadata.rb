@@ -4,7 +4,7 @@ maintainer_email 'govindarajanv@gmail.com'
 license 'all_rights'
 description 'Installs/Configures base'
 long_description 'Installs/Configures base'
-version '0.1.0'
+version '0.1.1'
 
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
@@ -19,7 +19,4 @@ version '0.1.0'
 # source_url 'https://github.com/<insert_org_here>/base' if respond_to?(:source_url)
 
 # Install basic packages that is required for any node
-package 'vim'
-package 'tree'
-package 'locate'
 

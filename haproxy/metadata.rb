@@ -1,0 +1,7 @@
+name 'haproxy'
+maintainer 'Govindarajan V'
+maintainer_email 'govindarajanv@gmail.com'
+license 'all_rights'
+description 'Installs/Configures haproxy'
+long_description 'Installs/Configures haproxy'
+version '0.1.0'
