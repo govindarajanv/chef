@@ -5,3 +5,5 @@
 # Copyright (c) 2017 The Authors, All Rights Reserved.
 
 print "Hello Chef"
+
+print node.chef_environment

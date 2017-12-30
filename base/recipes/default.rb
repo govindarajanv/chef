@@ -6,3 +6,4 @@
 package 'vim'
 package 'mlocate'
 package 'tree'
+package 'bash-completion'
