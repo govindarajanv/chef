@@ -1,7 +1,7 @@
 # chef
 
-** preparing the node **
-** steps for boostrapping without password prompted for sudo privileges **
+**preparing the node**
+**steps for boostrapping without password prompted for sudo privileges**
 useradd admin
 passwd admin
 usermod -g wheel admin
@@ -14,15 +14,15 @@ visudo
 
 **commands frequently used**
 
-** To edit node file **
+**To edit node file**
 knife node edit webserver2
 knife node from file webserver2.json
 
-** Upload cookbooks **
+**Upload cookbooks**
 update version in metadata.rb 
 berks install
 berks upload
 knife cookbook upload webserver -o . --force
 
-** generate cookbooks **
+**generate cookbooks**
 chef generate cookbook webserver
