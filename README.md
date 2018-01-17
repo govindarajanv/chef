@@ -26,3 +26,6 @@ knife cookbook upload webserver -o . --force
 
 **generate cookbooks**
 chef generate cookbook webserver
+
+**Setup cloud based workstation**
+
