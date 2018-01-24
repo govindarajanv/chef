@@ -1,0 +1,6 @@
+chef generate cookbook docker
+chef generate template docker.repository
+chef generate lwrp manageDocker
+edit or add the required files
+update metadata.rb and README.md
+berks install && berks upload

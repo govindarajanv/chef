@@ -3,6 +3,8 @@
 # Recipe:: default
 #
 # Copyright (c) 2018 The Authors, All Rights Reserved.
+include_recipe 'yum-mysql-community::mysql57'
+
 mysql_client 'default' do
   action :create
 end

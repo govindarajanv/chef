@@ -10,6 +10,7 @@
   "policy_group": null,
   "run_list": [
   "recipe[base]",
+  "recipe[docker]",
   "recipe[webserver]"
 ]
 

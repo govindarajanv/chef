@@ -4,9 +4,9 @@ maintainer_email 'you@example.com'
 license 'all_rights'
 description 'Installs/Configures db_server'
 long_description 'Installs/Configures db_server'
-version '1.1.0'
+version '1.1.2'
 
 depends 'mysql'
 depends 'mysql2_chef_gem'
 depends 'database'
-
+depends 'yum-mysql-community'
