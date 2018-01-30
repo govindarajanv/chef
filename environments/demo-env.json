@@ -7,6 +7,15 @@
   "json_class": "Chef::Environment",
   "chef_type": "environment",
   "default_attributes": {
+       "haproxy": {
+           "backend": {
+	  	"load_balancing_method": "roundrobin",
+	  	"app_name": "app1",
+	  	"ip_addr": "172.31.112.126",
+	  	"port_num": "80"
+                
+	   }
+       }
 
   },
   "override_attributes": {

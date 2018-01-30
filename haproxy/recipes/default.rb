@@ -6,6 +6,4 @@
 
 package 'haproxy'
 
-service 'haproxy' do
-	action [:enable, :start]
-end
+include_recipe 'haproxy::configure'
