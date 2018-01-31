@@ -11,12 +11,20 @@
            "backend": {
 	  	"load_balancing_method": "roundrobin",
 	  	"app_name": "app1",
-	  	"ip_addr": "172.31.112.126",
+	  	"ip_addr": "govindarajanv2.mylabserver.com",
 	  	"port_num": "80"
                 
 	   }
-       }
-
+       },
+       "webserver": {
+           "conf": {
+	  	"document_root": "/var/www/html",
+	  	"app_name": "sample",
+	  	"app_server_ip": "govindarajanv3.mylabserver.com",
+	  	"app_server_port": "80"
+                
+	   }
+	}
   },
   "override_attributes": {
 

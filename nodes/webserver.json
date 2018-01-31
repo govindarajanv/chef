@@ -1,5 +1,5 @@
 {
-  "name": "webserver2",
+  "name": "webserver",
   "chef_environment": "demo-env",
   "normal": {
     "tags": [
