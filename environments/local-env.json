@@ -1,6 +1,6 @@
 {
-  "name": "local-env",
-  "description": "The Chef environment for all your practice",
+  "name": "demo-env",
+  "description": "The Chef environment for all your demonstrations",
   "cookbook_versions": {
 
   },
@@ -19,12 +19,21 @@
        "webserver": {
            "conf": {
 	  	"document_root": "/var/www/html",
-	  	"app_name": "sample",
+	  	"app_name": "app1",
 	  	"app_server_ip": "govindarajanv3.mylabserver.com",
 	  	"app_server_port": "80"
                 
 	   }
 	}
+       "appserver": {
+           "installation": {
+	  	"oracle_java_url": "http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.rpm",
+	  	"index_page_content": "Welcome to Tomcat's Test Index Page",
+	  	"sample_war_location": "https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war"
+                
+	   }
+	}
+
   },
   "override_attributes": {
 
