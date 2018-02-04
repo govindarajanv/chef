@@ -1,0 +1,7 @@
+{
+  "name": "base",
+  "description": "This is a base role any node will have to assume by default. Other roles would be added on top of this role",
+  "run_list": [
+    "recipe[base]"
+  ]
+}

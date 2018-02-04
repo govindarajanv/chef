@@ -1,0 +1,8 @@
+{
+  "name": "load-balancer",
+  "description": "This role is for grouping all load balancer specific cookbooks",
+  "run_list": [
+    "role[base]",
+    "recipe[haproxy]"
+  ]
+}

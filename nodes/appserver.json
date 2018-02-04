@@ -9,8 +9,7 @@
   "policy_name": null,
   "policy_group": null,
   "run_list": [
-  "recipe[base]",
-  "recipe[app_service_server]"
+  "role[app-server]"
 ]
 
 }

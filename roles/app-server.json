@@ -1,0 +1,7 @@
+{
+  "name": "app-server",
+  "run_list": [
+    "role[base]",
+    "recipe[app_service_server]"
+  ]
+}

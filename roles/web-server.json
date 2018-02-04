@@ -1,0 +1,9 @@
+{
+  "name": "web-server",
+  "description": "This role is taken up by the node that would be acting as a webserver",
+  "run_list": [
+    "role[base]",
+    "recipe[webserver]",
+    "recipe[docker]"
+  ]
+}
