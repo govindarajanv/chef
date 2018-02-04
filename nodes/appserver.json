@@ -1,0 +1,16 @@
+{
+  "name": "appserver",
+  "chef_environment": "demo-env",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "policy_name": null,
+  "policy_group": null,
+  "run_list": [
+  "recipe[base]",
+  "recipe[app_service_server]"
+]
+
+}

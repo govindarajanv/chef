@@ -24,7 +24,7 @@
 	  	"app_server_port": "80"
                 
 	   }
-	}
+	},
        "appserver": {
            "installation": {
 	  	"oracle_java_url": "http://download.oracle.com/otn-pub/java/jdk/9.0.4+11/c2514751926b4512b076cc82f959763f/jdk-9.0.4_linux-x64_bin.rpm",
@@ -32,8 +32,10 @@
 	  	"sample_war_location": "https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war"
                 
 	   }
+	},
+       "java": {
+           "arch": "x86_64"
 	}
-
   },
   "override_attributes": {
 
