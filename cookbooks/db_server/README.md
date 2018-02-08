@@ -9,4 +9,4 @@ V2.1.4	-	Added additional dependencies in metadata.rb
 V2.2.4	-	Added template to set mysql repo in database node
 V2.3.4	-	Fixed the bug related to accessing of data bag item inside the recipe
 V2.3.5	-	Fixed another bug related to accessing of data bag item inside the recipe
-
+V2.3.6	-	decluttered default recipe by splitting the steps and executed bash resource independently
