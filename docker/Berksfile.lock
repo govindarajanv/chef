@@ -1,0 +1,7 @@
+DEPENDENCIES
+  docker
+    path: .
+    metadata: true
+
+GRAPH
+  docker (1.2.0)
