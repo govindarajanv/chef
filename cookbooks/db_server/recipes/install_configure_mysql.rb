@@ -13,6 +13,24 @@ bash 'other installation steps' do
     EOH
 end
 
+bash 'enable repolist' do
+  code <<-EOH
+    yum repolist enabled | grep "mysql.*-community.*" 
+    EOH
+end
+
+bash 'instal mysql community server' do
+  code <<-EOH
+    yum install mysql-community-server -y 
+    EOH
+end
+
+bash 'enable and disable yum config manager' do
+  code <<-EOH
+    yum-config-manager --disable mysql57-community && yum-config-manager --enable mysql56-community
+    EOH
+end
+
 service 'mysqld' do
     action [:enable, :start]
 end
