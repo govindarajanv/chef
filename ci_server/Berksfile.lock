@@ -1,7 +1,0 @@
-DEPENDENCIES
-  ci_server
-    path: .
-    metadata: true
-
-GRAPH
-  ci_server (2.0.4)

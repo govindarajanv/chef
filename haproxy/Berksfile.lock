@@ -1,7 +1,0 @@
-DEPENDENCIES
-  haproxy
-    path: .
-    metadata: true
-
-GRAPH
-  haproxy (1.2.3)
