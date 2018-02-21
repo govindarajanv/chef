@@ -1,4 +1,5 @@
 # my_java
 
-TODO: Enter the cookbook description here.
+This cookbook installs and sets up java on the node
+
 
