@@ -1,0 +1,7 @@
+{
+  "name": "monitoring",
+  "run_list": [
+    "role[base]",
+    "recipe[elk_stack]"
+  ]
+}
