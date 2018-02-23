@@ -40,6 +40,15 @@ end
 
 package 'tomcat'
 
+#Create users for accessing manager
+template '/etc/tomcat/tomcat-users.xml' do
+  source 'tomcat-users.xml.erb'
+  owner 'root'
+  group 'tomcat'
+  mode '0644'
+  notifies :reload, 'service[haproxy]'
+end
+
 # Tomcat configuration
 execute 'Add a group for Tomcat' do
   command 'groupadd tomcat'
