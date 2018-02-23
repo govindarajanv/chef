@@ -9,7 +9,7 @@ template '/etc/yum.repos.d/artifactory.repo' do
                 group 'root'
                 mode '0755'
 end
-manageArtificatory 'install' do
+manageArtifactory 'install' do
                 action    :install
 end
 service 'artifactory' do
