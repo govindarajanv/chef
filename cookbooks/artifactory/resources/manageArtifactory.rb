@@ -2,15 +2,15 @@
 resource_name :manageArtifactory
 
 action :install do
-                package 'artifactory'
+                package 'jfrog-artifactory-oss'
 
-                service 'artifactory' do
+                service 'jfrog-artifactory-oss' do
                                 action [:enable, :start]
                 end
 end
 
 action :uninstall do
-                package 'artifactory' do
+                package 'jfrog-artifactory-oss' do
                                 action :remove
                 end
 end

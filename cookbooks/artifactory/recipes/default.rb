@@ -4,7 +4,7 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 template '/etc/yum.repos.d/artifactory.repo' do
-                source 'artifactory.repository.erb'
+                source 'artifactory.repo.erb'
                 owner 'root'
                 group 'root'
                 mode '0755'
