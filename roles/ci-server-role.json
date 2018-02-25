@@ -1,0 +1,20 @@
+{
+  "name": "ci-server-role",
+  "description": "This role is for the server that acts as a CI server",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "chef_type": "role",
+  "run_list": [
+    "role[base]",
+    "recipe[my_java]",
+    "recipe[ci_server]"
+  ],
+  "env_run_lists": {
+
+  }
+}

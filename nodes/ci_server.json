@@ -1,0 +1,15 @@
+{
+  "name": "ci_server",
+  "chef_environment": "demo-env",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "policy_name": null,
+  "policy_group": null,
+  "run_list": [
+  "role[ci-server-role]"
+]
+
+}
