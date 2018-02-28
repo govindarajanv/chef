@@ -18,3 +18,4 @@ end
 service 'jenkins' do
 	action [:enable, :start]
 end
+package 'maven'

@@ -10,3 +10,4 @@ version '1.1.8' - setting selinux to permissive mode
 version '2.0.2' - Fixed some bugs
 version '2.0.3' - Fixed bugs related to incorrect resource name
 version '2.0.4' - updated enabled flag in yum repository template created for jenkins
+version '2.1.4' - Installing Maven required for the build
