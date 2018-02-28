@@ -21,9 +21,11 @@ execute 'check pwd' do
   command 'echo $(pwd) > log.time'
 end
 # update  bash profile
+bash_file = "#{ENV['HOME']}/.bash_profile"
+print bash_file
 ruby_block "update environment file" do
   block do
-    file = Chef::Util::FileEdit.new("/home/vagrant/.bash_profile")
+    file = Chef::Util::FileEdit.new("#{ENV['HOME']}/.bash_profile")
     file.insert_line_if_no_match("/JAVA_HOME=/", "JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.161-0.b14.el7_4.x86_64/jre/bin/java")
     file.insert_line_if_no_match("/PATH=\$JAVA_HOME\/bin/", "export PATH=\$JAVA_HOME\/bin:\$PATH")
     file.write_file
@@ -32,7 +34,7 @@ end
 
 # refresh bash profile
 execute 'refresh bash profile' do
-  command 'sh /home/vagrant/.bash_profile'
+  command 'sh #{bash_file}'
 end
 
 
@@ -46,7 +48,7 @@ template '/etc/tomcat/tomcat-users.xml' do
   owner 'root'
   group 'tomcat'
   mode '0644'
-  notifies :reload, 'service[haproxy]'
+  notifies :reload, 'service[tomcat]'
 end
 
 # Tomcat configuration

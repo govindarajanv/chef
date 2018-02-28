@@ -6,4 +6,5 @@ V0.1.0	- Base version of server cookbook - child cookbook app_service version - 
 V1.1.0	- Updated version of server cookbook - child cookbook app_service version - v1.1.0
 V2.1.0	- Updated version of server cookbook - child cookbook app_service version - v2.1.0
 V2.1.1	- Updated version of server cookbook - child cookbook app_service version - v2.1.1
+V3.1.1	- Updated version of server cookbook - child cookbook app_service version - v3.2.1
 
