@@ -96,6 +96,9 @@ remote_file '/var/lib/tomcat/webapps/sample.war'do
   action :create
 end
 
+package 'tomcat-webapps'
+package 'tomcat-admin-webapps'
+
 service 'tomcat' do
 	action [:enable, :start]
 end

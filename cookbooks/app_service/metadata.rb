@@ -5,7 +5,7 @@ license 'All Rights Reserved'
 description 'Installs/Configures app_service'
 long_description 'Installs/Configures app_service'
 
-version '3.2.1'
+version '3.3.1'
 
 chef_version '>= 12.1' if respond_to?(:chef_version)
 

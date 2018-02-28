@@ -5,7 +5,7 @@ license 'All Rights Reserved'
 description 'Installs/Configures app_service_server'
 long_description 'Installs/Configures app_service_server'
 
-version '3.1.1'
+version '3.2.1'
 
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
@@ -21,4 +21,4 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 #
 # source_url 'https://github.com/<insert_org_here>/app_service_server'
 
-depends 'app_service', '= 3.2.1'
+depends 'app_service', '= 3.3.1'
