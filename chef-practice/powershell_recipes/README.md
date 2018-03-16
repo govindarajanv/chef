@@ -1,0 +1,7 @@
+-	update .kitchen.yml file
+-	vagrant plugin install vagrant-winrm
+-	install packer
+-	packer build -force -only virtualbox-iso vbox-2012r2.json
+-	check if box exists in the current folder
+-	vagrant box add windows-2012r2 windows2012r2min-virtualbox.box
+-	vagrant box list

@@ -1,0 +1,30 @@
+driver:
+  name: vagrant
+  customize:
+    cpus: 2
+    memory: 4096
+
+transport:
+  name: winrm
+  elevated: true
+
+provisioner:
+  name: chef_zero
+  deprecations_as_errors: true
+
+verifier:
+  name: pester
+
+platforms:
+  - name: windows-8.1
+    driver_config:
+      box: chef/windows-8.1-enterprise
+    provisioner:
+      require_chef_omnibus: 12.7.2
+
+suites:
+  - name: autorun
+    run_list:
+      - recipe[automation::update_boot_timeout]
+    verifier:
+      name: inspec
