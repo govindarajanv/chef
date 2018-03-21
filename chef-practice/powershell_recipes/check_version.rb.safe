@@ -1,6 +1,12 @@
 ::Chef::Resource::PowershellScript.send(:include, Chef::Mixin::PowershellOut)
 command_str="(Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -eq 'Adobe AIR'}).Version" 
 powershell_script'set old version' do
+	code <<-EOH
+	$oldVersion=(Get-WmiObject -Class Win32_Product | Where-Object { $_.Name -eq "Adobe AIR"}).Version
+	EOH
+	script = <<-EOH
+	  echo Hello
+	EOH
 	oldVersion = powershell_out(command_str).stdout
 	puts " "
 	print "Old Version of the package is:"
@@ -11,24 +17,21 @@ end
 
 
 powershell_script 'set new version' do
-	newVersion = powershell_out(command_str).stdout
+	code <<-EOH
+	$newVersion='1.1.2'
+	$newVersion
+	EOH
 	puts " "
+	newVersion='1.1.2'
 	print "New Version of the package is:"
 	print (newVersion)
 	puts " "
 	node.run_state['newVersion'] = newVersion
-
-	node.run_state['reboot_flag'] = false
-	if node.run_state['oldVersion'] != node.run_state['newVersion']
-		node.run_state['reboot_flag'] = true
 end
-ruby 'reboot block' do
-	puts "Inside reboot block"
-	puts "old Version:"
-	puts node.run_state['oldVersion']
-	puts "new Version:"
-	puts node.run_state['newVersion']
-	puts node.run_state['reboot_flag']
-	puts (lazy { node.run_state['oldVersion']})
-	puts (lazy {node.run_state['newVersion']})
+execute 'checking versions' do
+	command "dir"
+	guard_interpreter :powershell_script
+	puts (node.run_state['oldVersion'])
+	puts (node.run_state['newVersion'])
+	only_if (lazy { node.run_state['oldVersion'] } != lazy { node.run_state['newVersion']})
 end
