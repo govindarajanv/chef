@@ -27,8 +27,4 @@ ruby 'reboot block' do
 	puts "old Version:"
 	puts node.run_state['oldVersion']
 	puts "new Version:"
-	puts node.run_state['newVersion']
-	puts node.run_state['reboot_flag']
-	puts (lazy { node.run_state['oldVersion']})
-	puts (lazy {node.run_state['newVersion']})
 end
