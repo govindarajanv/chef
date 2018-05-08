@@ -7,5 +7,5 @@ package 'httpd'
 
 include_recipe 'webserver::configure'
 service 'httpd' do
-	action [:enable, :start]
+  action %i[enable start]
 end

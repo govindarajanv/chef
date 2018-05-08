@@ -30,9 +30,17 @@
 
 			-	Remove or comment out the single entry in .rubocop_todo.yml
 
-			-	run $rubocop to identify there are issues and repeat the process till all issues are fixed	
+			-	run $rubocop to identify there are issues, fix that issue and repeat the process till all issues are fixed	
 
-			-	Remove the file .rubocop_todo.yml once the issues are fixed or edit if you want any issues to be ignored
+			-	Remove the file .rubocop_todo.yml once the issues are fixed or edit if you want any issues to be considered
+
+			-	After adding entries in .rubocop_todo.yml, running rubocop, your offences will be ignored.
+
+			-	For alignment issues, use $rubocop --auto-correct
+
+			-	For LineLength constraints, add the below line as the first line in .rubocop.yml file
+				LineLength:
+				   Max: 200
 
 		-	Rubocop output
 

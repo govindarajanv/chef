@@ -7,11 +7,11 @@
 require 'spec_helper'
 
 describe 'webserver::default' do
-  #Here we use context to specify platform like CentOS or Ubuntu
+  # Here we use context to specify platform like CentOS or Ubuntu
   context 'CentOS' do
     let(:chef_run) do
-        runner = ChefSpec::ServerRunner.new(platform: 'centos', version: '7.2.1511')
-      	runner.converge(described_recipe)
+      runner = ChefSpec::ServerRunner.new(platform: 'centos', version: '7.2.1511')
+      runner.converge(described_recipe)
     end
 
     it 'converges successfully' do
@@ -29,6 +29,5 @@ describe 'webserver::default' do
     it 'starts the httpd service' do
       expect(chef_run).to start_service('httpd')
     end
-
   end
 end

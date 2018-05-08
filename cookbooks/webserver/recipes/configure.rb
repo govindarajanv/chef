@@ -9,5 +9,5 @@ end
 # Enable and Start Apache webserver; Support Reloading httpd
 service 'httpd' do
   supports enable: true, start: true, reload: true
-  action [:enable, :start]
+  action %i[enable start]
 end
