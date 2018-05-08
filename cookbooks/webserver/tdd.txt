@@ -1,0 +1,47 @@
+-	Static code analysis
+	
+	-	Use foodcritic 
+
+		-	foodcritic <path> -t <tag name>
+			foodcritic ./ -t correctness
+
+		-	foodcritic ./ -t correctness,style
+
+		-	To run all tags except for the given tag
+			foodcritic ./ -t ~FC064
+
+		-	Alternatively you can use .foodcritic file in each directory and configure the tags to be used (for exclusion use ~)
+
+	-	Use rubocop
+
+		-	Ruby static analysis tool not for chef
+
+		-	settings configured in .rubocop.yml
+
+		-	To keep track of offences, create .rubocop_todo.yml which can be done using $rubocop --auto-gen-config command
+
+		-	Add inherit_from: .rubocop_todo.yml in .rubocop.yml
+
+		-	Here are the steps
+			
+			-	inside your cookbook directory, rubocop  --auto-gen-config should be run
+
+			-	Add inherit part shown above
+
+			-	Remove or comment out the single entry in .rubocop_todo.yml
+
+			-	run $rubocop to identify there are issues and repeat the process till all issues are fixed	
+
+			-	Remove the file .rubocop_todo.yml once the issues are fixed or edit if you want any issues to be ignored
+
+		-	Rubocop output
+
+			-	.	-	clean file
+
+			-	C	-	Convention
+
+			-	W	-	Warning
+
+			-	E	-	Error
+
+			-	F	-	Fatal
