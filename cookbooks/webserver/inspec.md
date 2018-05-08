@@ -20,7 +20,7 @@ file has be_writable
 
 Expectations are handled by should and should_not
 
-
+#for doing integration testing using inspec, use kitchen verify
 
 
 #default.rb
@@ -65,4 +65,10 @@ describe user(web_user) do
 end
 describe user('guest') do
   it { should_not exist }
+end
+
+describe file('/var/www/html/index.html') do
+  it { should exist }
+  it { should be_readable }
+  its('content') {should match /hello world/ }
 end
