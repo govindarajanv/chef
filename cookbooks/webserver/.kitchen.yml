@@ -3,35 +3,42 @@ driver:
   name: docker
   use_sudo: false
   privileged: true
+  driver_config:
+    ssl_verify_mode: ":verify_none"
 
 provisioner:
   name: chef_zero
+  require_chef_omnibus: 12.8.1
+  always_update_cookbooks: true
+  environments_path: 'test/environments'
+  nodes_path: 'test/nodes'
+  client_rb:
+    environment: demo_dev
 
 verifier:
   name: inspec
+  format: junit
+  output: "test/reports/%{platform}_%{suite}_inspec.xml"
 
 platforms:
-  - name: centos-6.8
   - name: centos-7.2
+    driver:
+     platform: rhel
+     provision_command:
+        - yum install net-tools unzip -y
+     run_command: /usr/lib/systemd/systemd
+  - name: amazon-linux
+    driver_config:
+     image: amazonlinux:latest
+     provision_command:
+        - yum install net-tools unzip -y
+     platform: rhel
 
 suites:
-  - name: dev
-    driver:
-      run_command: /usr/sbin/init
+  - name: default
     run_list:
       - recipe[webserver::default]
-    attributes: { 'java': { 'jdk_version': '7' } }
-    driver_config:
-      forward:
-        - 8080:80
-    excludes: centos-6.8
-  - name: qa
-    driver:
-      run_command: /sbin/init
-    run_list:
-      - recipe[webserver::default]
-    attributes: { 'java': { 'jdk_version': '6' } }
-    driver_config:
-      forward:
-        - 8080:80
-    includes: centos-6.8
+    verifier:
+      inspec_tests:
+        - test/integration/default
+    attributes:
